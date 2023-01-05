@@ -1,0 +1,48 @@
+﻿@model List<DoAnLTWEB.Models.SanPham>
+@{
+    ViewBag.Title = "Quản lý sản phẩm | Trang quản trị";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+<a href="/Employee/Create">Create new student</a>
+<a href="/Employee/Update">Update student</a>
+<form class="d-flex flex-row align-items-center flex-wrap">
+    <input type="search" class="form-control w-auto" id="search2" name="search2" placeholder="Tìm" />
+    <button type="submit" class="btn btn-primary mx-2">Enter</button>
+</form>
+<table class="table">
+    <tr>
+        <th>Mã</th>
+        <th>Tên</th>
+        <th>Giá</th>
+        <th>Thông tin</th>
+        <th>Loại sản phẩm</th>
+        <th>Hình ảnh</th>
+        <th>Lượt mua</th>
+        <th>Kiểu sản phâm</th>
+        <th>Hành động</th>
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Ten</td>
+            <td>@item.Gia đ </td>
+            <td>@item.ThongTin</td>
+            <td>@item.LoaiSP_ID</td>
+            <td><img src="@item.HinhAnh" width="50"</td>
+            <td>@item.LuotMua</td>
+            <td>@item.Kieu</td>
+
+            <td>
+                <button class="btn btn-success"><a style="color:white" href="/Account/Edit/@item.Id">Sửa</a></button>
+                <button class="btn btn-danger"><a style="color:white" href="/Account/Delete/@item.Id">Xóa</a></button>
+                <button class="btn btn-primary"><a style="color:white" href="/Collection/Detail/@item.Id">Xem</a></button>
+
+            </td>
+
+        </tr>
+    }
+    
+</table>

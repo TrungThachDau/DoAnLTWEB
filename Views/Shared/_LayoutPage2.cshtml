@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <link href="~/Mdb5/css/mdb.min.css" rel="stylesheet" />
+    <link href="~/Content/styles.css" />
+    <script src="~/mdb5/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link href="~/Styles/StyleSheet1.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.6.1.js"></script>
+    <link href="~/Content/fontawesome.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="row" style="height:50px;padding-bottom:65px">
+        <div class=" align-items-center">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">Shop của Trung</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link disabled" href="#">Trang quản lý</a>
+                        <a class="nav-item nav-link active" href="/Home/Index">Trang chủ<span class="sr-only"></span></a>
+                        <a class="nav-item nav-link" href="/Account/Manage">Quản lý sản phẩm</a>
+                        <a class="nav-item nav-link" href="/Account/CreateItem">Thêm sản phẩm</a>
+                        <a class="nav-item nav-link" href="/Account/Account">Tài khoản</a>
+
+                    </div>
+                </div>
+                <a>Xin chào, Admin</a>
+            </nav>
+        </div>
+        @*<div class="col-md-6">
+                <nav class="navbar justify-content-between" style="text-align:right">
+
+
+                </nav>
+            </div>*@
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿@model DoAnLTWEB.Models.SanPham
+
+@{
+    ViewBag.Title = "Xóa | Trang quản trị";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<div style="margin-left:300px;margin-right:300px;margin-top:200px">
+    <h2>Xóa sản phẩm</h2>
+
+    <form action="/Account/Delete/@Model.Id" method="post">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <table class="table">
+            <tr>
+                <th>
+                    Mã sản phẩm
+                </th>
+                <td>@Model.Id</td>
+            </tr>
+            <tr>
+                <th>Tên sản phẩm</th>
+                <td>@Model.Ten</td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-danger">Xác nhận xóa (Không thể hoàn tác)</button>
+        <a href="/Account/Manage" class="btn btn-dark">Hủy</a>
+    </form>
+</div>

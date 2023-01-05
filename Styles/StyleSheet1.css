@@ -1,0 +1,35 @@
+﻿body {
+}
+
+
+.sidebar li{
+    list-style-type: none;
+    margin-left:50px;
+}
+.sidebar a{
+    text-decoration:none;
+    color:black;
+    margin-bottom:50px;
+}
+.dots {
+    $color: orange;
+    color: $color;
+    // height: 8px;
+    border-width: 0 0 8px;
+    border-style: solid;
+    border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 1" width="8" height="4"><circle fill="#{$color}" cx="1" cy="0.5" r="0.5"/></svg>') 0 0 100% repeat;
+    width: 216px;
+}
+.sidebarCart-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 70px;
+}
+.sidebox-order {
+    background: #fff;
+    padding: 15px;
+    position: relative;
+    margin-bottom: 30px;
+    border: 1px solid #e1e3e4;
+    border-radius: 2px;
+}

@@ -1,0 +1,23 @@
+﻿@model DoAnLTWEB.Models.SanPham
+@{
+    ViewBag.Title = Model.Ten +" | Shop của Trung";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Chi tiết sản phẩm</h2>
+<p>@Model.Ten</p>
+<div class="row">
+    <div class="col-3">
+        <img src="@Model.HinhAnh" width="300" />
+    </div>
+    <div class="col-5">
+        <p>Mã sản phẩm: @Model.Ten</p>
+        <p>Giá: @Model.Gia ₫</p>
+        
+        <p>@Model.ThongTin</p>
+
+        <a href="#" class="btn btn-dark">Mua ngay</a>
+        <a href="@Url.Action("AddToCard", "Cart", new { id = Model.Id })" class="btn btn-dark">Thêm vào giỏ</a>
+    </div>
+</div>
+

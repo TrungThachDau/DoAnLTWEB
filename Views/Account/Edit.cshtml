@@ -1,0 +1,107 @@
+﻿@model DoAnLTWEB.Models.SanPham
+@{
+    ViewBag.Title = "Sửa | Trang quản trị";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<div style="margin-left:300px;margin-right:300px;">
+    <h2>Sửa sản phẩm</h2>
+    <form action="/Account/Edit/@Model.Id" method="post">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        
+        <table class="table">
+            <tr>
+                <th>
+                    Mã sản phẩm
+                </th>
+                <td>@Model.Id</td>
+            </tr>
+            <tr>
+                <th>Tên sản phẩm</th>
+                <td>
+
+                    <input type="text"
+                           class="form-control"
+                           id="Ten"
+                           name="Ten"
+                           placeholder="Tên sản phẩm"
+                           value="@Model.Ten" />
+                </td>
+            </tr>
+            <tr>
+                <th>Giá sản phẩm</th>
+                <td>
+                    <input type="num"
+                           class="form-control"
+                           id="Gia"
+                           name="Gia"
+                           placeholder="Giá sản phẩm"
+                           value="@Model.Gia" />
+                </td>
+            </tr>
+            <tr>
+                <th>Loại sản phẩm</th>
+                <td>
+                    <input type="number"
+                           class="form-control"
+                           id="LoaiSP_ID"
+                           name="LoaiSP_ID"
+                           placeholder="Loại sản phẩm"
+                           value="@Model.LoaiSP_ID" />
+                </td>
+            </tr>
+            <tr>
+                <th>Ảnh sản phẩm</th>
+                <td>
+                    <input type="text"
+                           class="form-control"
+                           id="HinhAnh"
+                           name="HinhAnh"
+                           placeholder="Ảnh sản phẩm"
+                           value="@Model.HinhAnh" />
+                </td>
+            </tr>
+            <tr>
+                <th>Thông tin sản phẩm</th>
+                <td>
+                    <input type="text"
+                           class="form-control"
+                           id="ThongTin"
+                           name="ThongTin"
+                           placeholder="Thông tin sản phẩm"
+                           value="@Model.ThongTin" />
+                </td>
+            </tr>
+            <tr>
+                <th>Lượt mua</th>
+                <td>
+                    <input type="number"
+                           class="form-control"
+                           id="LuotMua"
+                           name="LuotMua"
+                           placeholder="Lượt mua"
+                           value="@Model.LuotMua" />
+                </td>
+            </tr>
+            <tr>
+                <th>Ngày cập nhật</th>
+                <td>
+                    <input type="text"
+                           class="form-control"
+                           id="Kieu"
+                           name="Kieu"
+                           placeholder="Kiểu sản phẩm"
+                           value="@Model.Kieu" />
+                </td>
+            </tr>
+            
+            
+                
+        </table>
+
+        <button type="submit" class="btn btn-success">Lưu</button>
+        <a href="/Account/Manage" class="btn btn-danger">Hủy</a>
+    </form>
+
+
+</div>

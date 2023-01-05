@@ -1,0 +1,93 @@
+﻿@model List<DoAnLTWEB.Models.SanPham>
+@{
+    ViewBag.Title = "Quần dài | Shop của Trung";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<div class="row bg-light">
+    <p style="margin-left:50px"><a>Trang chủ</a> / <a>Danh mục</a> / <a>Quần</a>/<a>Quần dài</a></p>
+</div>
+<div class="row" style="height:50px"></div>
+<div class="row" style="padding-bottom:50px">
+    <div class="col-3">
+
+        <ul class="list-group list-group-flush sidebar">
+            <li class="list-group-flush"> <a href="/Collection/Index?loai=1" style="text-decoration:none">ÁO</a></li>
+            <li class="list-group-item"><a href="/Collection/Tee">TEE</a></li>
+            <li class="list-group-item"><a href="/Collection/Polo">POLO</a></li>
+            <li class="list-group-item"><a href="/Collection/Hoodie">HOODIE & SWEATER</a></li>
+
+            <li class="list-group-flush"> <a href="/Collection/Index?loai=2">QUẦN</a></li>
+            <li class="list-group-item"><a href="/Collection/Shorts">NGẮN</a></li>
+            <li class="list-group-item"><a href="/Collection/Pants">DÀI</a></li>
+
+            <li class="list-group-flush"> <a href="/Collection/Accessory">PHỤ KIỆN</a></li>
+        </ul>
+
+    </div>
+    <div class="col-9">
+
+        @*<div class="col-6">
+                <h4><b>Tất cả sản phẩm</b></h4>
+            </div>*@
+        <div class="col-12" style="display:flex">
+
+            <h4><b>Quần dài</b></h4>
+            <div style="margin-left:600px">
+                <select id="SortDrop" name="SortDrop">
+                    <option value="Id">Sắp xếp</option>
+                    <option value="PriceMax">Giá: Giảm dần</option>
+                    <option value="PriceMin">Giá: Tăng dần</option>
+                    <option value="AtoZ">Tên: A-Z</option>
+                    <option value="ZtoA">Tên: Z-A</option>
+                    <option value="New">Sản phẩm mới nhất</option>
+
+                </select>
+            </div>
+
+        </div>
+        <div class="row" style="margin-top:20px">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                @foreach (var item in Model)
+                {
+                    <div class="col">
+                        <div class="card h-100 card-img">
+                            <a href="/Collection/Detail/@item.Id">
+                                <img class="card-img" src="@item.HinhAnh" height="300" />
+                            </a>
+                            <div class="card-body row" style="height:100px">
+                                <h5 class="card-title">@item.Ten</h5>
+                            </div>
+                            <div class="card-body">
+                                <a class="card-text" style="font-size:20px;color:black"> @item.Gia ₫</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+        <nav style="margin-top:30px">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="/Collection/Pants?page=1">Đầu</a>
+                </li>
+
+                @for (int i = 0; i < ViewBag.TotalPage; i++)
+                {
+                    <li class="page-item"><a class="page-link" href="/Collection/Pants?page=@(i+1)">@(i+1)</a></li>
+
+                }
+                <li class="page-item">
+                    <a class="page-link" href="/Collection/Pants?page=@ViewBag.End">Cuối</a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</div>
+<script>
+    $('#SortDrop').change(() => {
+        const value = $('#SortDrop').val();
+            window.location.href = "/Collection/Index?SortColumn=" + value
+    });
+</script>
